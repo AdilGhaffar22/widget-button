@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});exports.rgba=(e,r=1)=>{let t=e.replace("#","");3===t.length&&(t=`${t[0]}${t[0]}${t[1]}${t[1]}${t[2]}${t[2]}`);return r>1&&r<=100&&(r/=100),`rgba(${parseInt(t.substring(0,2),16)}, ${parseInt(t.substring(2,4),16)}, ${parseInt(t.substring(4,6),16)}, ${r})`};
