@@ -1,0 +1,1 @@
+const r=(r,t=1)=>{let s=r.replace("#","");3===s.length&&(s=`${s[0]}${s[0]}${s[1]}${s[1]}${s[2]}${s[2]}`);return t>1&&t<=100&&(t/=100),`rgba(${parseInt(s.substring(0,2),16)}, ${parseInt(s.substring(2,4),16)}, ${parseInt(s.substring(4,6),16)}, ${t})`};export{r as rgba};
