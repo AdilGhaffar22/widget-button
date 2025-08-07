@@ -45,7 +45,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 				onClick={onClick}
 				{...rest}
 			>
-				{children} Adil
+				{children}
 			</Sc.Button>
 		);
 	},

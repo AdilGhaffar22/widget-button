@@ -1,1 +1,1 @@
-const o=(...o)=>o.filter((o=>!!o)).join(" ");export{o as classNames};
+const o=(...o)=>o.filter(o=>!!o).join(" ");export{o as classNames};

@@ -1,6 +1,6 @@
 {
 	"name": "widget-button",
-	"version": "1.0.2",
+	"version": "1.0.4",
 	"description": "React UI library boilerplate",
 	"sideEffects": false,
 	"exports": {
@@ -42,7 +42,11 @@
 		"not op_mini all"
 	],
 	"dependencies": {
-		"@babel/runtime": "7.20.7"
+		"@babel/runtime": "7.20.7",
+		"@dynamic-labs/ethereum": "^4.25.9",
+		"@dynamic-labs/sdk-react-core": "^4.25.9",
+		"viem": "^2.33.3",
+		"wagmi": "^2.16.1"
 	},
 	"devDependencies": {
 		"@babel/core": "7.20.12",
@@ -70,7 +74,7 @@
 		"@storybook/react": "6.5.15",
 		"@storybook/testing-library": "0.0.13",
 		"@testing-library/jest-dom": "5.16.5",
-		"@testing-library/react": "13.4.0",
+		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "14.4.3",
 		"@trivago/prettier-plugin-sort-imports": "4.0.0",
 		"@types/jest": "^29.2.5",

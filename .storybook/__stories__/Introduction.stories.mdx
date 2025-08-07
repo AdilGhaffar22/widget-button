@@ -4,7 +4,7 @@ import { Heading, Meta, Subtitle, Title } from '@storybook/addon-docs';
 
 # Welcome to Widget Button 🎉
 
-> Version v1.0.2 By Creasoft
+> Version v1.0.2 By Adil Ghaffar
 
 ## Installation
 
@@ -16,9 +16,15 @@ npm i widget-button @emotion/react @emotion/styled
 
 ```jsx
 import React from 'react';
+import { Presale } from 'widget-button';
 import { Button } from 'widget-button';
 
 function App() {
-	return <Button>Click me</Button>;
+	return (
+		<div>
+			<Button>Click me</Button>
+			<Presale />
+		</div>
+	);
 }
 ```
