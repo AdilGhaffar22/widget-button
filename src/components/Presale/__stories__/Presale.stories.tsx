@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createConfig, WagmiProvider } from 'wagmi';
 import { supportedChains, transports } from '../components/chains';
 // import { config } from '../components/wagmiConfig';
-import PreSale from '../Presale';
+import { PreSale } from '../Presale';
 import type { PreSaleProps } from '../types';
 
 // adjust path

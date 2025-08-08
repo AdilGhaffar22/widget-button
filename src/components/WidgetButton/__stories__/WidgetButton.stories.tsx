@@ -1,7 +1,7 @@
 import { EthereumWalletConnectors } from '@dynamic-labs/ethereum';
 import { DynamicContextProvider } from '@dynamic-labs/sdk-react-core';
 import type { Meta, StoryObj } from '@storybook/react';
-import WidgetButton from '../WidgetButton';
+import {WidgetButton} from '../WidgetButton';
 import type { WidgetButtonProps } from '../WidgetButton';
 
 const cssOverrides = `
