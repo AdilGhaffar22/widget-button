@@ -9,7 +9,7 @@ export interface WidgetButtonProps {
 	variant?: 'modal' | 'dropdown';
 }
 
-const WidgetButton: React.FC<WidgetButtonProps> = ({
+export const WidgetButton: React.FC<WidgetButtonProps> = ({
 	className = '',
 	buttonText = 'Connect Wallet',
 	buttonClassName = '!bg-[#C9FA49] !text-[#333333] font-bold rounded-full',
@@ -33,5 +33,3 @@ const WidgetButton: React.FC<WidgetButtonProps> = ({
 		</div>
 	);
 };
-
-export default WidgetButton;

@@ -64,7 +64,7 @@ const Modal: React.FC<ModalProps> = ({
 	);
 };
 
-const PreSale: React.FC<PreSaleProps> = ({
+export const PreSale: React.FC<PreSaleProps> = ({
 	title = 'Offer For Early Investors',
 	discountedPrice,
 	tokenSymbol,
@@ -295,5 +295,3 @@ const PreSale: React.FC<PreSaleProps> = ({
 		</Fragment>
 	);
 };
-
-export default PreSale;
