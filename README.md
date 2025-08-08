@@ -70,4 +70,13 @@ function App() {
 | `discountedPrice` | `number`            | -                           | Token price to display |
 | `tokenSymbol`     | `string`            | "TEMOC"                     | Token symbol           |
 | `theme`           | `'light' \| 'dark'` | "light"                     | Color theme            |
-| `onBuyCrypto`     | `                   |
+| `onBuyCrypto`     | `() => void`        | -                           | Crypto buy callback    |
+| `onBuyCard`       | `() => void`        | -                           | Card buy callback      |
+
+## License
+
+MIT © Adil Ghaffar
+
+## Keywords
+
+React, PreSale, Web3, Ethereum, Dynamic Labs, Widget, SDK, presale-button, wallet-connect, wagmi, viem, TypeScript, reusable-component, Ethereum-integration
