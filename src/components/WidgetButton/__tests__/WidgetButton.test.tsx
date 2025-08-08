@@ -1,6 +1,6 @@
 import { DynamicContextProvider } from '@dynamic-labs/sdk-react-core';
 import { render, screen } from '@testing-library/react';
-import WidgetButton from '../WidgetButton';
+import { WidgetButton } from '../WidgetButton';
 
 // Mock the Dynamic SDK
 jest.mock('@dynamic-labs/sdk-react-core', () => ({
@@ -18,11 +18,11 @@ jest.mock('@dynamic-labs/sdk-react-core', () => ({
 }));
 
 // Mock Button component
-jest.mock('../Button/Button', () => {
-	return function MockButton({ children, className }: any) {
-		return <button className={className}>{children}</button>;
-	};
-});
+// jest.mock('../WidgetButton/WidgetButton', () => {
+// 	return function MockButton({ children, className }: any) {
+// 		return <button className={className}>{children}</button>;
+// 	};
+// });
 
 const renderWithProvider = (component: React.ReactElement) => {
 	return render(

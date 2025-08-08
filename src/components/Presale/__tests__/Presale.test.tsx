@@ -1,7 +1,7 @@
 import { DynamicContextProvider } from '@dynamic-labs/sdk-react-core';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
-import PreSale from './PreSale';
+import { PreSale } from '../Presale';
 
 // Mock the Dynamic SDK
 jest.mock('@dynamic-labs/sdk-react-core', () => ({
@@ -26,7 +26,7 @@ jest.mock('@dynamic-labs/sdk-react-core', () => ({
 // Mock wagmi
 jest.mock('wagmi', () => ({
 	useBalance: () => ({
-		data: { value: 1000000000000000000n },
+		data: { value: BigInt(1000000000000000000) }, // Mock balance
 	}),
 }));
 

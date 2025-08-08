@@ -66,44 +66,44 @@ export const Default: Story = {
 	},
 };
 
-export const DarkTheme: Story = {
-	args: {
-		title: 'Exclusive PreSale Offer',
-		discountedPrice: 0.005,
-		tokenSymbol: 'TOKEN',
-		theme: 'dark',
-	},
-	decorators: [
-		(Story) => (
-			<DynamicContextProvider
-				settings={{
-					environmentId: 'your-environment-id',
-					walletConnectors: [],
-				}}
-			>
-				<div
-					style={{
-						padding: '20px',
-						minHeight: '100vh',
-						backgroundColor: '#111827',
-					}}
-				>
-					<Story />
-				</div>
-			</DynamicContextProvider>
-		),
-	],
-};
+// export const DarkTheme: Story = {
+// 	args: {
+// 		title: 'Exclusive PreSale Offer',
+// 		discountedPrice: 0.005,
+// 		tokenSymbol: 'TOKEN',
+// 		theme: 'dark',
+// 	},
+// 	decorators: [
+// 		(Story) => (
+// 			<DynamicContextProvider
+// 				settings={{
+// 					environmentId: 'your-environment-id',
+// 					walletConnectors: [],
+// 				}}
+// 			>
+// 				<div
+// 					style={{
+// 						padding: '20px',
+// 						minHeight: '100vh',
+// 						backgroundColor: '#111827',
+// 					}}
+// 				>
+// 					<Story />
+// 				</div>
+// 			</DynamicContextProvider>
+// 		),
+// 	],
+// };
 
-export const CustomCallbacks: Story = {
-	args: {
-		title: 'Custom PreSale Component',
-		discountedPrice: 0.004,
-		tokenSymbol: 'CUSTOM',
-		onBuyCrypto: () => console.log('Buy with crypto clicked'),
-		onBuyCard: () => console.log('Buy with card clicked'),
-		onBankTransfer: () => console.log('Bank transfer clicked'),
-		formatDisplayAmount: (amount: number) =>
-			`${amount.toLocaleString()} tokens`,
-	},
-};
+// export const CustomCallbacks: Story = {
+// 	args: {
+// 		title: 'Custom PreSale Component',
+// 		discountedPrice: 0.004,
+// 		tokenSymbol: 'CUSTOM',
+// 		onBuyCrypto: () => console.log('Buy with crypto clicked'),
+// 		onBuyCard: () => console.log('Buy with card clicked'),
+// 		onBankTransfer: () => console.log('Bank transfer clicked'),
+// 		formatDisplayAmount: (amount: number) =>
+// 			`${amount.toLocaleString()} tokens`,
+// 	},
+// };

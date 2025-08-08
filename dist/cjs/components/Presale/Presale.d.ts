@@ -1,4 +1,6 @@
-import React from 'react';
+/// <reference types="react" />
 import { PreSaleProps } from './types';
-declare const PreSale: React.FC<PreSaleProps>;
-export default PreSale;
+export declare const PreSale: {
+    ({ title, discountedPrice, tokenSymbol, onBuyCrypto, onBuyCard, onBankTransfer, tokenValues, formatDisplayAmount, className, theme, }: PreSaleProps): JSX.Element;
+    displayName: string;
+};

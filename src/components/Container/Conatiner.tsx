@@ -45,3 +45,6 @@ export const Container = ({
 		</Sc.Container>
 	);
 };
+
+
+Container.displayName = 'Container';

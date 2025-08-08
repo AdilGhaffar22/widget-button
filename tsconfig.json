@@ -24,6 +24,6 @@
     "declaration": true,
     "isolatedModules": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/components/PresaleWidget/PresaleWidget.tsx"],
   "exclude": ["node_modules"]
 }

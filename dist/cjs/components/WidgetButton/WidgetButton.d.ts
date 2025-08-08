@@ -5,5 +5,4 @@ export interface WidgetButtonProps {
     buttonClassName?: string;
     variant?: 'modal' | 'dropdown';
 }
-declare const WidgetButton: React.FC<WidgetButtonProps>;
-export default WidgetButton;
+export declare const WidgetButton: React.FC<WidgetButtonProps>;

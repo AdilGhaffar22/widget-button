@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export interface UsePreSaleOptions {
     transactionsService?: any;
     tokenValues?: any;
@@ -16,6 +15,6 @@ export declare const usePreSale: ({ transactionsService, tokenValues, onPaymentT
         top: boolean;
         walletConfirmation: boolean;
     };
-    updateModal: (modalName: "top" | "walletConfirmation" | "others", value: boolean) => void;
+    updateModal: (modalName: "others" | "top" | "walletConfirmation", value: boolean) => void;
     resetPaymentFlow: () => void;
 };

@@ -16,4 +16,7 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
  *   <!-- your content here -->
  * </Container>
  */
-export declare const Container: ({ fluid, className, children, ...rest }: ContainerProps) => JSX.Element;
+export declare const Container: {
+    ({ fluid, className, children, ...rest }: ContainerProps): JSX.Element;
+    displayName: string;
+};

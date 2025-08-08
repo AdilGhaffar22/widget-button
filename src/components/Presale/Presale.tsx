@@ -32,7 +32,7 @@ import {
 } from './components/StylesComponents';
 import { PreSaleProps } from './types';
 
-interface ModalProps {
+interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 	show: boolean;
 	onHide: (show: boolean) => void;
 	children: React.ReactNode;
@@ -64,7 +64,7 @@ const Modal: React.FC<ModalProps> = ({
 	);
 };
 
-export const PreSale: React.FC<PreSaleProps> = ({
+export const PreSale = ({
 	title = 'Offer For Early Investors',
 	discountedPrice,
 	tokenSymbol,
@@ -75,7 +75,7 @@ export const PreSale: React.FC<PreSaleProps> = ({
 	formatDisplayAmount,
 	className = '',
 	theme = 'light',
-}) => {
+}: PreSaleProps) => {
 	const [paymentType, setPaymentType] = useState('');
 	const [typeToSwitch, setTypeToSwitch] = useState('');
 	const [prevBalance, setPrevBalance] = useState(0);
@@ -295,3 +295,5 @@ export const PreSale: React.FC<PreSaleProps> = ({
 		</Fragment>
 	);
 };
+
+PreSale.displayName = 'PreSale';
