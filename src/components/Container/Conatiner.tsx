@@ -1,13 +1,13 @@
-import { classNames } from "../../utils/classNames";
-import * as Sc from "./Container.styled";
+import { classNames } from '../../utils/classNames';
+import * as Sc from './Container.styled';
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-  /**
-   * If `true`, apply `width: 100%`.
-   *
-   * @default false
-   */
-  fluid?: boolean;
+	/**
+	 * If `true`, apply `width: 100%`.
+	 *
+	 * @default false
+	 */
+	fluid?: boolean;
 }
 
 /**
@@ -20,28 +20,28 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
  * </Container>
  */
 export const Container = ({
-  fluid = false,
-  className,
-  children,
-  ...rest
+	fluid = false,
+	className,
+	children,
+	...rest
 }: ContainerProps) => {
-  const classes = classNames(
-    "Container-root",
-    fluid ? "Container-fluid" : "",
-    className
-  );
+	const classes = classNames(
+		'Container-root',
+		fluid ? 'Container-fluid' : '',
+		className,
+	);
 
-  if (fluid) {
-    return (
-      <Sc.FluidContainer className={classes} {...rest}>
-        {children}
-      </Sc.FluidContainer>
-    );
-  }
+	if (fluid) {
+		return (
+			<Sc.FluidContainer className={classes} {...rest}>
+				{children}
+			</Sc.FluidContainer>
+		);
+	}
 
-  return (
-    <Sc.Container className={classes} {...rest}>
-      {children}
-    </Sc.Container>
-  );
+	return (
+		<Sc.Container className={classes} {...rest}>
+			{children}
+		</Sc.Container>
+	);
 };
