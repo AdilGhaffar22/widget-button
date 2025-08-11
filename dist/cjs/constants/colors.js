@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});exports.ERROR="#dc2626",exports.PRIMARY="#3b82f6",exports.SECONDARY="#4b5563",exports.SUCCESS="#16a34a",exports.WARN="#eab308",exports.WHITE="#ffffff";
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});exports.BLACK="#000000",exports.ERROR="#dc2626",exports.PRIMARY="#3b82f6",exports.SECONDARY="#4b5563",exports.SUCCESS="#16a34a",exports.WARN="#eab308",exports.WHITE="#ffffff";

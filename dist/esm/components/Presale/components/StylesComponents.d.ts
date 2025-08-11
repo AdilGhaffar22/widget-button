@@ -71,6 +71,7 @@ export declare const ModalContent: import("@emotion/styled").StyledComponent<{
     as?: import("react").ElementType<any> | undefined;
 } & {
     maxWidth?: string | undefined;
+    theme?: string | undefined;
 }, import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
 export declare const CloseButton: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;

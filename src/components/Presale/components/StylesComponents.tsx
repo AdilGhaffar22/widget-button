@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { BLACK, PRIMARY, SECONDARY, WHITE } from '@src/constants/colors';
 import { ButtonProps } from '../types';
 
 export const Container = styled.div<{ theme?: string }>`
@@ -8,6 +9,8 @@ export const Container = styled.div<{ theme?: string }>`
 	width: 100%;
 	max-width: 750px;
 	padding: 20px;
+	border-radius: 12px;
+	border: 2px solid #1f2937;
 
 	@media (min-width: 768px) {
 		padding: 32px;
@@ -26,6 +29,7 @@ export const Container = styled.div<{ theme?: string }>`
 		css`
 			background-color: #1f2937;
 			color: white;
+			border: 2px solid ${WHITE};
 		`}
 `;
 
@@ -58,7 +62,7 @@ export const InfoRow = styled.div`
 
 export const InfoText = styled.span`
 	font-size: 16px;
-	color: #000000;
+	color: inherit;
 `;
 
 export const TokenBalanceRow = styled.div`
@@ -142,36 +146,19 @@ export const Button = styled.button<ButtonProps>`
 		switch (variant) {
 			case 'secondary':
 				return css`
-					background-color: #f3f4f6;
-					color: #374151;
-
-					&:hover {
-						background-color: #e5e7eb;
-						transform: translateY(-1px);
-					}
+					background-color: ${SECONDARY};
+					color: ${WHITE};
 				`;
 			case 'outline':
 				return css`
 					background-color: transparent;
-					color: #c9fa49;
-					border: 2px solid #c9fa49;
-
-					&:hover {
-						background-color: #c9fa49;
-						color: #333333;
-						transform: translateY(-1px);
-					}
+					color: ${BLACK};
+					border: 2px solid ${BLACK};
 				`;
 			default:
 				return css`
-					background-color: #c9fa49;
-					color: #333333;
-
-					&:hover {
-						background-color: #b8e63a;
-						transform: translateY(-1px);
-						box-shadow: 0 4px 12px rgba(201, 250, 73, 0.3);
-					}
+					background-color: ${PRIMARY};
+					color: ${WHITE};
 				`;
 		}
 	}}
@@ -209,14 +196,14 @@ export const HelpText = styled.div`
 	font-weight: 400;
 
 	p {
-		color: #000000;
+		color: inherit;
 		margin: 0;
 	}
 `;
 
 export const HelpLink = styled.span`
 	cursor: pointer;
-	color: #c9fa49;
+	color: ${PRIMARY};
 
 	&:hover {
 		text-decoration: underline;
@@ -238,8 +225,8 @@ export const ModalOverlay = styled.div<{ show: boolean }>`
 	padding: 16px;
 `;
 
-export const ModalContent = styled.div<{ maxWidth?: string }>`
-	background-color: white;
+export const ModalContent = styled.div<{ maxWidth?: string; theme?: string }>`
+	background-color: ${WHITE};
 	border-radius: 12px;
 	max-width: ${({ maxWidth }) => maxWidth || '580px'};
 	width: 100%;
@@ -251,6 +238,14 @@ export const ModalContent = styled.div<{ maxWidth?: string }>`
 	@media (min-width: 768px) {
 		padding: 24px;
 	}
+
+	${({ theme }) =>
+		theme === 'dark' &&
+		css`
+			background-color: ${BLACK};
+			color: white;
+			border: 2px solid ${WHITE};
+		`}
 `;
 
 export const CloseButton = styled.button`
@@ -271,7 +266,7 @@ export const CloseButton = styled.button`
 
 export const ModalTitle = styled.h2`
 	font-size: 2rem;
-	color: #212428;
+	color: inherit;
 	font-weight: 600;
 	margin-top: 16px;
 	text-align: center;
@@ -284,7 +279,7 @@ export const ModalTitle = styled.h2`
 
 export const ModalText = styled.p`
 	font-size: 20px;
-	color: #212428;
+	color: inherit;
 	margin-top: 20px;
 	text-align: center;
 	max-width: 480px;

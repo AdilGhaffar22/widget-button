@@ -1,1 +1,1 @@
-const f="#ffffff",a="#3b82f6",b="#4b5563",c="#16a34a",e="#dc2626",o="#eab308";export{e as ERROR,a as PRIMARY,b as SECONDARY,c as SUCCESS,o as WARN,f as WHITE};
+const f="#000000",a="#ffffff",b="#3b82f6",c="#4b5563",e="#16a34a",o="#dc2626",t="#eab308";export{f as BLACK,o as ERROR,b as PRIMARY,c as SECONDARY,e as SUCCESS,t as WARN,a as WHITE};

@@ -38,6 +38,7 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: React.ReactNode;
 	maxWidth?: string;
 	className?: string;
+	theme?: string;
 }
 
 // Modal Component
@@ -47,12 +48,15 @@ const Modal: React.FC<ModalProps> = ({
 	children,
 	maxWidth,
 	className,
+	onTouchMoveCapture,
+	theme = 'light',
 }) => {
 	if (!show) return null;
 
 	return (
 		<ModalOverlay show={show} onClick={() => onHide(false)}>
 			<ModalContent
+				theme={theme}
 				maxWidth={maxWidth}
 				className={className}
 				onClick={(e) => e.stopPropagation()}
@@ -75,6 +79,7 @@ export const PreSale = ({
 	formatDisplayAmount,
 	className = '',
 	theme = 'light',
+	buttonStyle = 'bg-[#C9FA49]',
 }: PreSaleProps) => {
 	const [paymentType, setPaymentType] = useState('');
 	const [typeToSwitch, setTypeToSwitch] = useState('');
@@ -196,15 +201,23 @@ export const PreSale = ({
 				{paymentType === '' && (
 					<div>
 						<ButtonGrid>
-							<Button fullWidth onClick={handleBuy}>
+							<Button
+								className={`${buttonStyle}`}
+								fullWidth
+								onClick={handleBuy}
+							>
 								Buy with Crypto
 							</Button>
-							<Button fullWidth onClick={handleBuyWithCard}>
+							<Button
+								className={`${buttonStyle}`}
+								fullWidth
+								onClick={handleBuyWithCard}
+							>
 								Buy With Card
 							</Button>
 							<Button
 								fullWidth
-								className="full-width-button"
+								className={`${buttonStyle} full-width-button`}
 								onClick={handleBankTransfer}
 							>
 								Bank Transfer/Others
@@ -256,6 +269,7 @@ export const PreSale = ({
 				show={walletConfirmation}
 				onHide={setWalletConfirmation}
 				maxWidth="580px"
+				theme={theme}
 			>
 				<ModalTitle>Connect Your Wallet</ModalTitle>
 				<ModalText>
@@ -269,7 +283,6 @@ export const PreSale = ({
 				</ModalText>
 				<ModalButtonContainer>
 					<Button
-						size="large"
 						onClick={() => {
 							if (!primaryWallet?.isConnected) {
 								setShowAuthFlow(true);

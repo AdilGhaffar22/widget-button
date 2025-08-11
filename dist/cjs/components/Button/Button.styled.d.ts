@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import type { Color, Variant } from "./Button";
+import { Color, Variant } from "../../types/Button.types";
 export declare const Button: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;

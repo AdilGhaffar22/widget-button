@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { Color, Variant } from '@src/types/Button.types';
 import { rgba } from '@src/utils/rgba';
 import {
 	ERROR,
@@ -8,7 +9,6 @@ import {
 	WARN,
 	WHITE,
 } from '@src/constants/colors';
-import type { Color, Variant } from './Button';
 
 function getColorScheme(color: Color) {
 	switch (color) {

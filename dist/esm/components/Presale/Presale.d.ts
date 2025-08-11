@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import { PreSaleProps } from './types';
 export declare const PreSale: {
-    ({ title, discountedPrice, tokenSymbol, onBuyCrypto, onBuyCard, onBankTransfer, tokenValues, formatDisplayAmount, className, theme, }: PreSaleProps): JSX.Element;
+    ({ title, discountedPrice, tokenSymbol, onBuyCrypto, onBuyCard, onBankTransfer, tokenValues, formatDisplayAmount, className, theme, buttonStyle, }: PreSaleProps): JSX.Element;
     displayName: string;
 };
