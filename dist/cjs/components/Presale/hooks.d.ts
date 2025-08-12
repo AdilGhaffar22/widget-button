@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export interface UsePreSaleOptions {
     transactionsService?: any;
     tokenValues?: any;

@@ -1,6 +1,7 @@
 /// <reference types="react" />
 export interface PreSaleProps {
     title?: string;
+    description?: string;
     discountedPrice?: number;
     tokenSymbol?: string;
     onBuyCrypto?: () => void;
@@ -17,6 +18,7 @@ export interface PreSaleProps {
     container?: React.CSSProperties;
     modalStyle?: React.CSSProperties;
     hrefStyle?: React.CSSProperties;
+    tokenImage?: string;
 }
 export interface ButtonProps {
     variant?: 'primary' | 'secondary' | 'outline';

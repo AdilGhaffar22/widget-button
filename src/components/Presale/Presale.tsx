@@ -4,7 +4,6 @@ import {
 	useDynamicEvents,
 	useOpenFundingOptions,
 } from '@dynamic-labs/sdk-react-core';
-import { css } from '@emotion/react';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Address } from 'viem';
 import { useBalance } from 'wagmi';
