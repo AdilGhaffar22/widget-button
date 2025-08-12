@@ -4,6 +4,7 @@ import {
 	useDynamicEvents,
 	useOpenFundingOptions,
 } from '@dynamic-labs/sdk-react-core';
+import { css } from '@emotion/react';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Address } from 'viem';
 import { useBalance } from 'wagmi';
@@ -48,7 +49,6 @@ const Modal: React.FC<ModalProps> = ({
 	children,
 	maxWidth,
 	className,
-	onTouchMoveCapture,
 	theme = 'light',
 }) => {
 	if (!show) return null;
@@ -70,6 +70,7 @@ const Modal: React.FC<ModalProps> = ({
 
 export const PreSale = ({
 	title = 'Offer For Early Investors',
+	description,
 	discountedPrice,
 	tokenSymbol,
 	onBuyCrypto,
@@ -84,6 +85,8 @@ export const PreSale = ({
 	contentStyle,
 	container,
 	modalStyle,
+	hrefStyle,
+	tokenImage,
 }: PreSaleProps) => {
 	const [paymentType, setPaymentType] = useState('');
 	const [typeToSwitch, setTypeToSwitch] = useState('');
@@ -171,6 +174,18 @@ export const PreSale = ({
 		<Fragment>
 			<Container theme={theme} className={className} style={container}>
 				<Title style={titleStyle}>{title}</Title>
+				{description && (
+					<InfoText
+						style={{
+							display: 'block',
+							width: 'fit-content',
+							margin: '0 auto',
+							...contentStyle,
+						}}
+					>
+						{description}
+					</InfoText>
+				)}
 
 				<WidgetContainer>
 					{primaryWallet?.isConnected && (
@@ -196,7 +211,7 @@ export const PreSale = ({
 							Token Balance
 						</TokenBalanceLabel>
 						<TokenBalanceValue>
-							<TokenIcon src="/assets/images/coin.png" alt="" />
+							<TokenIcon src={tokenImage} alt="Token" height={24} width={24} />
 							{formatDisplayAmount
 								? formatDisplayAmount(userPurchasedAmountData.totalTokens)
 								: userPurchasedAmountData.totalTokens}
@@ -227,9 +242,9 @@ export const PreSale = ({
 
 				{paymentType !== 'Card' && (
 					<HelpText>
-						<p>
+						<p style={contentStyle}>
 							Don't have enough Crypto?{' '}
-							<HelpLink onClick={() => setTop(true)} style={buttonStyle}>
+							<HelpLink onClick={() => setTop(true)} style={hrefStyle}>
 								Top up with Debit/Credit Card
 							</HelpLink>
 						</p>

@@ -37,11 +37,11 @@ export const Title = styled.h1`
 	font-size: 2rem;
 	font-weight: 700;
 	text-align: center;
-	margin-bottom: 24px;
+	margin-bottom: 12px;
 	color: inherit;
 
 	@media (min-width: 768px) {
-		font-size: 2.5rem;
+		font-size: 1.5rem;
 	}
 `;
 

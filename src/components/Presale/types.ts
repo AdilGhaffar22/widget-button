@@ -1,6 +1,7 @@
 // types.ts
 export interface PreSaleProps {
 	title?: string;
+	description?: string;
 	discountedPrice?: number;
 	tokenSymbol?: string;
 	onBuyCrypto?: () => void;
@@ -16,6 +17,8 @@ export interface PreSaleProps {
 	contentStyle?: React.CSSProperties;
 	container?: React.CSSProperties;
 	modalStyle?: React.CSSProperties;
+	hrefStyle?: React.CSSProperties;
+	tokenImage?: string;
 }
 
 export interface ButtonProps {

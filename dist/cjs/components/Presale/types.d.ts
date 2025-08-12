@@ -12,6 +12,11 @@ export interface PreSaleProps {
     className?: string;
     theme?: 'light' | 'dark';
     buttonStyle?: React.CSSProperties;
+    titleStyle?: React.CSSProperties;
+    contentStyle?: React.CSSProperties;
+    container?: React.CSSProperties;
+    modalStyle?: React.CSSProperties;
+    hrefStyle?: React.CSSProperties;
 }
 export interface ButtonProps {
     variant?: 'primary' | 'secondary' | 'outline';
