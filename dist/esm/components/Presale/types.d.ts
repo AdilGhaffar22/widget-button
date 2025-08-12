@@ -11,7 +11,7 @@ export interface PreSaleProps {
     formatDisplayAmount?: (amount: number) => string;
     className?: string;
     theme?: 'light' | 'dark';
-    buttonStyle?: string;
+    buttonStyle?: React.CSSProperties;
 }
 export interface ButtonProps {
     variant?: 'primary' | 'secondary' | 'outline';

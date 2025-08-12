@@ -11,7 +11,11 @@ export interface PreSaleProps {
 	formatDisplayAmount?: (amount: number) => string;
 	className?: string;
 	theme?: 'light' | 'dark';
-	buttonStyle?: string;
+	buttonStyle?: React.CSSProperties;
+	titleStyle?: React.CSSProperties;
+	contentStyle?: React.CSSProperties;
+	container?: React.CSSProperties;
+	modalStyle?: React.CSSProperties;
 }
 
 export interface ButtonProps {

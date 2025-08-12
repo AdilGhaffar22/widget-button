@@ -77,9 +77,13 @@ export const PreSale = ({
 	onBankTransfer,
 	tokenValues,
 	formatDisplayAmount,
+	titleStyle,
 	className = '',
 	theme = 'light',
-	buttonStyle = 'bg-[#C9FA49]',
+	buttonStyle,
+	contentStyle,
+	container,
+	modalStyle,
 }: PreSaleProps) => {
 	const [paymentType, setPaymentType] = useState('');
 	const [typeToSwitch, setTypeToSwitch] = useState('');
@@ -165,8 +169,8 @@ export const PreSale = ({
 
 	return (
 		<Fragment>
-			<Container theme={theme} className={className}>
-				<Title>{title}</Title>
+			<Container theme={theme} className={className} style={container}>
+				<Title style={titleStyle}>{title}</Title>
 
 				<WidgetContainer>
 					{primaryWallet?.isConnected && (
@@ -180,15 +184,17 @@ export const PreSale = ({
 				</WidgetContainer>
 
 				<InfoRow>
-					<InfoText>Public Presale</InfoText>
-					<InfoText>
+					<InfoText style={contentStyle}>Public Presale</InfoText>
+					<InfoText style={contentStyle}>
 						Discounted Price - ${discountedPrice || tokenValues?.price} USD
 					</InfoText>
 				</InfoRow>
 
 				{primaryWallet?.isConnected && userPurchasedAmountData && (
 					<TokenBalanceRow>
-						<TokenBalanceLabel>Token Balance</TokenBalanceLabel>
+						<TokenBalanceLabel style={contentStyle}>
+							Token Balance
+						</TokenBalanceLabel>
 						<TokenBalanceValue>
 							<TokenIcon src="/assets/images/coin.png" alt="" />
 							{formatDisplayAmount
@@ -201,24 +207,17 @@ export const PreSale = ({
 				{paymentType === '' && (
 					<div>
 						<ButtonGrid>
-							<Button
-								className={`${buttonStyle}`}
-								fullWidth
-								onClick={handleBuy}
-							>
+							<Button style={buttonStyle} fullWidth onClick={handleBuy}>
 								Buy with Crypto
 							</Button>
-							<Button
-								className={`${buttonStyle}`}
-								fullWidth
-								onClick={handleBuyWithCard}
-							>
+							<Button fullWidth onClick={handleBuyWithCard} style={buttonStyle}>
 								Buy With Card
 							</Button>
 							<Button
 								fullWidth
-								className={`${buttonStyle} full-width-button`}
+								className={`full-width-button`}
 								onClick={handleBankTransfer}
+								style={buttonStyle}
 							>
 								Bank Transfer/Others
 							</Button>
@@ -230,7 +229,7 @@ export const PreSale = ({
 					<HelpText>
 						<p>
 							Don't have enough Crypto?{' '}
-							<HelpLink onClick={() => setTop(true)}>
+							<HelpLink onClick={() => setTop(true)} style={buttonStyle}>
 								Top up with Debit/Credit Card
 							</HelpLink>
 						</p>
@@ -239,7 +238,13 @@ export const PreSale = ({
 			</Container>
 
 			{/* Top Up Modal */}
-			<Modal show={top} onHide={setTop} maxWidth="580px">
+			<Modal
+				show={top}
+				onHide={setTop}
+				maxWidth="580px"
+				theme={theme}
+				style={modalStyle}
+			>
 				<ModalTitle>Top Up Your Wallet</ModalTitle>
 				<ModalText>
 					To begin, please read the instructions and click "Continue." After you
@@ -270,6 +275,7 @@ export const PreSale = ({
 				onHide={setWalletConfirmation}
 				maxWidth="580px"
 				theme={theme}
+				style={modalStyle}
 			>
 				<ModalTitle>Connect Your Wallet</ModalTitle>
 				<ModalText>
@@ -289,6 +295,7 @@ export const PreSale = ({
 								setWalletConfirmation(false);
 							}
 						}}
+						style={buttonStyle}
 					>
 						Continue
 					</Button>
@@ -296,7 +303,13 @@ export const PreSale = ({
 			</Modal>
 
 			{/* Bank Transfer Modal */}
-			<Modal show={showOthers} onHide={setShowOthers} maxWidth="800px">
+			<Modal
+				show={showOthers}
+				onHide={setShowOthers}
+				maxWidth="800px"
+				theme={theme}
+				style={modalStyle}
+			>
 				<IframeContainer>
 					<iframe
 						width="660"
